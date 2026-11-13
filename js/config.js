@@ -1,22 +1,13 @@
 window.ALAD_CONFIG = {
-  "stageWidth": 768,
-  "stageHeight": 384,
+  "stageWidth": 1080,
+  "stageHeight": 450,
   "fitMode": "cover",
   "bgColor": "#000000",
   "transition": 0.8,
   "backgroundFade": true,
   "clockTimezone": "America/Lima",
   "projectId": "p_mueidxh7aspx93",
-  "backgrounds": [
-    {
-      "id": "b_mufp2ygstywbni",
-      "type": "video",
-      "src": "https://storage.googleapis.com/media_files_contents_qa/realtime/p_mueidxh7aspx93/1790264211752_fondo_realtime.mp4",
-      "duration": 8,
-      "breakpoints": null,
-      "condition": null
-    }
-  ],
+  "backgrounds": [],
   "resources": [
     {
       "id": "r_mueieyg02fhvdn",
@@ -53,18 +44,33 @@ window.ALAD_CONFIG = {
     "refresh": 15
   },
   "apiRefreshMin": 1,
-  "breakpoints": [],
+  "breakpoints": [
+    {
+      "id": "bp_720x630",
+      "name": "720x630",
+      "width": 720,
+      "height": 630
+    }
+  ],
   "elements": [
     {
       "id": "foto_api",
       "type": "image",
       "imageSrc": "{Foto}",
-      "x": 0,
+      "x": 53,
       "y": 0,
       "width": 47,
       "height": 100,
       "objectFit": "cover",
       "zIndex": 10,
+      "overrides": {
+        "bp_720x630": {
+          "x": 52,
+          "y": 0,
+          "width": 48,
+          "height": 100
+        }
+      },
       "condition": {
         "type": "showFor",
         "delay": 4.5,
@@ -75,18 +81,27 @@ window.ALAD_CONFIG = {
       "id": "frase_api",
       "type": "text",
       "text": "{Frase}",
-      "x": 48,
-      "y": 15,
-      "width": 45,
-      "height": 55,
+      "x": 8,
+      "y": 32,
+      "width": 42,
+      "height": 38,
       "fitText": true,
       "fontSize": 48,
       "color": "#000000",
       "fontFamilyKey": "Myriad Pro Bold",
       "fontWeight": "normal",
-      "align": "right",
+      "align": "left",
       "valign": "center",
       "zIndex": 10,
+      "overrides": {
+        "bp_720x630": {
+          "x": 6,
+          "y": 30,
+          "width": 43,
+          "height": 42,
+          "fontSize": 42
+        }
+      },
       "condition": {
         "type": "showFor",
         "delay": 3.6,
@@ -97,17 +112,26 @@ window.ALAD_CONFIG = {
       "id": "nombre_api",
       "type": "text",
       "text": "{SoloNombre} <span style='color: #f39c12;'>{SoloCargo}</span>",
-      "x": 48,
-      "y": 75,
-      "width": 45,
-      "height": 20,
+      "x": 8,
+      "y": 72,
+      "width": 42,
+      "height": 15,
       "fitText": true,
       "fontSize": 20,
       "color": "#000000",
       "fontFamilyKey": "Myriad Pro Semibold",
       "fontWeight": "normal",
-      "align": "right",
+      "align": "left",
       "zIndex": 10,
+      "overrides": {
+        "bp_720x630": {
+          "x": 6,
+          "y": 74,
+          "width": 43,
+          "height": 14,
+          "fontSize": 18
+        }
+      },
       "condition": {
         "type": "showFor",
         "delay": 3.6,
