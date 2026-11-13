@@ -753,8 +753,8 @@
           r.domImg = img;
         }
         var newSrc = fillTokens(cfg.imageSrc || '');
-        // Actualizar solo si cambia para evitar parpadeos
-        if (r.domImg.getAttribute('src') !== newSrc) {
+        // Actualizar solo si cambia (y evitar pedir tokens sin resolver como '{Foto}')
+        if (newSrc && !/^\{[^}]+\}$/.test(newSrc) && r.domImg.getAttribute('src') !== newSrc) {
           r.domImg.setAttribute('src', newSrc);
         }
         break;
@@ -771,6 +771,10 @@
         r.el.style.display = '';
         r.el.style.transition = 'opacity ' + (C.transition || 0.8) + 's ease-in-out';
         r.el.style.opacity = '0';
+        // Precargar imágenes desde el inicio aunque aún no sea su momento de aparecer
+        if (cfg.type === 'image' && cfg.enabled !== false && applyStyle(r)) {
+          renderContent(r);
+        }
       } else {
         r.el.style.display = 'none';
         r.el.style.transition = '';

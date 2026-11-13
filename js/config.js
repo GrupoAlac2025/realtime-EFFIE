@@ -73,7 +73,7 @@ window.ALAD_CONFIG = {
       },
       "condition": {
         "type": "showFor",
-        "delay": 4.5,
+        "delay": 3.1,
         "showFor": 99999
       }
     },
